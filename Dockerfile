@@ -20,4 +20,6 @@ ENV LC_ALL C.UTF-8
 ENV LANG fr_FR.UTF-8
 ENV LANGUAGE fr_FR.UTF-8
 
+COPY config/php.ini /usr/local/etc/php
+
 CMD ["apache2-foreground"]
