@@ -1,5 +1,5 @@
 FROM php:5.6-apache
-MAINTAINER Pierre Galvez <pierre@lbab.fr>
+MAINTAINER Art Rowan <art@rownarts.com>
 
 RUN a2enmod rewrite
 RUN a2enmod expires
@@ -13,13 +13,13 @@ RUN dpkg-reconfigure locales \
     && /usr/sbin/update-locale LANG=C.UTF-8
 
 # Install needed default locale for Makefly
-RUN echo 'fr_FR.UTF-8 UTF-8' >> /etc/locale.gen \
+RUN echo 'ru_RU.UTF-8 UTF-8' >> /etc/locale.gen \
     && locale-gen
 
 # Set default locale for the environment
 ENV LC_ALL C.UTF-8
-ENV LANG fr_FR.UTF-8
-ENV LANGUAGE fr_FR.UTF-8
+ENV LANG ru_RU.UTF-8
+ENV LANGUAGE ru_FR.UTF-8
 
 ADD ./config/php.ini /usr/local/etc/php/
 
